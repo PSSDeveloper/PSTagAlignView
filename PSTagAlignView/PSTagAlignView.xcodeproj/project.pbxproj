@@ -64,14 +64,11 @@
 		DEB99FD3202D92AF0042FD23 /* PSTagAlignView */ = {
 			isa = PBXGroup;
 			children = (
+				DECE6A2B20317CF2009DC4D1 /* PStagAlinView */,
 				DEB99FD4202D92AF0042FD23 /* AppDelegate.h */,
 				DEB99FD5202D92AF0042FD23 /* AppDelegate.m */,
 				DEB99FD7202D92AF0042FD23 /* ViewController.h */,
 				DEB99FD8202D92AF0042FD23 /* ViewController.m */,
-				DEB99FEA202D93200042FD23 /* PSTagAlignView.h */,
-				DEB99FEB202D93200042FD23 /* PSTagAlignView.m */,
-				DEC823F6202FE3FD005C8BE8 /* PSTagItemLabel.h */,
-				DEC823F7202FE3FD005C8BE8 /* PSTagItemLabel.m */,
 				DEB99FDA202D92AF0042FD23 /* Main.storyboard */,
 				DEB99FDD202D92AF0042FD23 /* Assets.xcassets */,
 				DEB99FDF202D92AF0042FD23 /* LaunchScreen.storyboard */,
@@ -79,6 +76,17 @@
 				DEB99FE3202D92AF0042FD23 /* main.m */,
 			);
 			path = PSTagAlignView;
+			sourceTree = "<group>";
+		};
+		DECE6A2B20317CF2009DC4D1 /* PStagAlinView */ = {
+			isa = PBXGroup;
+			children = (
+				DEB99FEA202D93200042FD23 /* PSTagAlignView.h */,
+				DEB99FEB202D93200042FD23 /* PSTagAlignView.m */,
+				DEC823F6202FE3FD005C8BE8 /* PSTagItemLabel.h */,
+				DEC823F7202FE3FD005C8BE8 /* PSTagItemLabel.m */,
+			);
+			path = PStagAlinView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

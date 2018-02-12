@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,24 +29,44 @@
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="左对齐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwD-ug-eoS">
-                                <rect key="frame" x="121" y="624.5" width="37" height="14.5"/>
+                                <rect key="frame" x="116" y="624.5" width="37" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="右对齐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZw-WR-tFk">
-                                <rect key="frame" x="217" y="624.5" width="37" height="14.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="右对齐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZw-WR-tFk">
+                                <rect key="frame" x="222" y="624.5" width="53" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfl-Fu-HLx">
+                                <rect key="frame" x="54" y="566" width="80" height="30"/>
+                                <state key="normal" title="宽度增加50"/>
+                                <connections>
+                                    <action selector="increaseWidth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l5w-5f-y30"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l42-Px-1YA">
+                                <rect key="frame" x="241.5" y="566" width="80" height="30"/>
+                                <state key="normal" title="宽度减少50"/>
+                                <connections>
+                                    <action selector="descreaseWidth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0rF-Iy-PWC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="iwD-ug-eoS" firstAttribute="centerY" secondItem="0OU-po-MPx" secondAttribute="centerY" id="6Yw-rc-de2"/>
                             <constraint firstItem="weg-or-AFD" firstAttribute="top" secondItem="0OU-po-MPx" secondAttribute="bottom" constant="20" id="8wy-6u-8hu"/>
-                            <constraint firstItem="SZw-WR-tFk" firstAttribute="leading" secondItem="0OU-po-MPx" secondAttribute="trailing" constant="5" id="CAR-EP-fgn"/>
-                            <constraint firstItem="0OU-po-MPx" firstAttribute="leading" secondItem="iwD-ug-eoS" secondAttribute="trailing" constant="5" id="hJ7-vp-YcF"/>
+                            <constraint firstItem="0OU-po-MPx" firstAttribute="leading" secondItem="iwD-ug-eoS" secondAttribute="trailing" constant="10" id="FZi-Fo-1HV"/>
+                            <constraint firstItem="0OU-po-MPx" firstAttribute="top" secondItem="l42-Px-1YA" secondAttribute="bottom" constant="20" id="Klq-N9-hsa"/>
+                            <constraint firstItem="iwD-ug-eoS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="116" id="OIu-44-f7I"/>
+                            <constraint firstAttribute="trailing" secondItem="SZw-WR-tFk" secondAttribute="trailing" constant="100" id="Qnt-wI-76Z"/>
+                            <constraint firstItem="SZw-WR-tFk" firstAttribute="leading" secondItem="0OU-po-MPx" secondAttribute="trailing" constant="10" id="UMB-BH-lRX"/>
+                            <constraint firstItem="0OU-po-MPx" firstAttribute="top" secondItem="cfl-Fu-HLx" secondAttribute="bottom" constant="20" id="bjo-kz-dhi"/>
+                            <constraint firstItem="l42-Px-1YA" firstAttribute="centerX" secondItem="0OU-po-MPx" secondAttribute="centerX" multiplier="1.5" id="bvo-De-6Cg"/>
+                            <constraint firstItem="cfl-Fu-HLx" firstAttribute="centerX" secondItem="0OU-po-MPx" secondAttribute="centerX" multiplier="0.5" id="l4W-7f-1dQ"/>
                             <constraint firstItem="0OU-po-MPx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qAD-V0-XC5"/>
                             <constraint firstItem="SZw-WR-tFk" firstAttribute="centerY" secondItem="0OU-po-MPx" secondAttribute="centerY" id="vVC-yJ-5oN"/>
                         </constraints>

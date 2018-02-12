@@ -65,10 +65,10 @@
         PSTagItemLabel *tempItem = nil;
         for (NSString *str in self.contentArray) {
             PSTagItemLabel *itemLabel = [[PSTagItemLabel alloc] init];
-            [self addSubview:itemLabel];
             itemLabel.contentString = str;
             CGFloat itemWidth = [itemLabel widthOfStr:str] + self.marign;
             if (itemWidth <= maxWidth) {
+                [self addSubview:itemLabel];
                 if (self.alignStyle == PSTagAlignStyleLeft) {
                     [self alignFromLeftWithItemLabel:itemLabel tempItem:tempItem itemWidth:itemWidth];
                 } else {
@@ -77,7 +77,7 @@
                 [self layoutIfNeeded];
                 tempItem = itemLabel;
             }else{
-                NSLog(@"beyond the width");
+                NSLog(@"Error:beyond the width");
                 return;
             }
         }

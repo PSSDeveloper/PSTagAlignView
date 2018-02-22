@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "PSTagAlignView.h"
-#import "PSTagItemLabel.h"
 
 @interface ViewController ()
 @property (nonatomic,strong) PSTagAlignView *tagAlignView;
@@ -21,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSArray *dataArray = @[@"金城郡", @"安定郡", @"北地郡",@"陈国", @"武威郡", @"张掖郡", @"梁国", @"酒泉郡", @"敦煌郡", @"张掖属国",@"中山国", @"沛国", @"居延属国",@"陇西郡",@"汉阳郡", @"鲁国",@"武都郡"];
+    /** 按照此格式传入配置参数 */
     NSDictionary *configDic = @{@"textFont": [UIFont systemFontOfSize:14],
                                 @"textColor": [UIColor orangeColor],
                                 @"borderColor": [UIColor orangeColor],

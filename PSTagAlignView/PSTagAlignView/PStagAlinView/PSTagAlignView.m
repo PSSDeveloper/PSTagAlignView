@@ -34,18 +34,24 @@
 
 + (instancetype)tagAlignViewWithContents:(NSArray *)array
                        itemMarign:(CGFloat)marign
-                 itemCornerRadius:(CGFloat)radius
-                         itemFont:(UIFont *)itemFont
-                    itemTextColor:(UIColor *)itemColor
-                  itemBorderColor:(UIColor *)borderColor{
-    PSTagAlignView *tagAlignView = [[self alloc] initWithFrame:CGRectZero];
-    tagAlignView.characterFont = itemFont;
-    tagAlignView.radius = radius;
-    tagAlignView.itemTextColor = itemColor;
-    tagAlignView.borderColor = borderColor;
-    tagAlignView.marign = marign;
-    tagAlignView.contentArray = array;
-    return tagAlignView;
+                              configDict:(NSDictionary *)configDic{
+    if (configDic == nil) {
+        NSLog(@"请传入相关配置参数");
+        return nil;
+    }else{
+        PSTagAlignView *tagAlignView = [[self alloc] initWithFrame:CGRectZero];
+        UIFont *characterFont = [configDic valueForKey:@"textFont"];
+        UIColor *textColor = [configDic valueForKey:@"textColor"];
+        UIColor *borderColor = [configDic valueForKey:@"borderColor"];
+        NSNumber *borderRadius = [configDic valueForKey:@"borderRadius"];
+        tagAlignView.characterFont = (characterFont == nil ? [UIFont systemFontOfSize:14] : characterFont);
+        tagAlignView.radius = (borderRadius == nil ? 0.f : [borderRadius floatValue]);
+        tagAlignView.itemTextColor = textColor == nil ? [UIColor orangeColor] :textColor;
+        tagAlignView.borderColor = borderColor == nil ? [UIColor orangeColor] : borderColor;
+        tagAlignView.marign = marign;
+        tagAlignView.contentArray = array;
+        return tagAlignView;
+    }
 }
 
 - (void)reloadData{
@@ -64,7 +70,7 @@
         CGFloat maxWidth = self.bounds.size.width;
         PSTagItemLabel *tempItem = nil;
         for (NSString *str in self.contentArray) {
-            PSTagItemLabel *itemLabel = [[PSTagItemLabel alloc] init];
+            PSTagItemLabel *itemLabel = [[PSTagItemLabel alloc] initWithFrame:CGRectZero WithtextColor:self.itemTextColor textFont:self.characterFont borderColor:self.borderColor borderRadius:self.radius];
             itemLabel.contentString = str;
             CGFloat itemWidth = [itemLabel widthOfStr:str] + self.marign;
             if (itemWidth <= maxWidth) {

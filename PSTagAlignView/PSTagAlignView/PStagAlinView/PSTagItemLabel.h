@@ -14,4 +14,9 @@
 
 - (CGFloat)widthOfStr:(NSString *)str;
 
+- (instancetype)initWithFrame:(CGRect)frame WithtextColor:(UIColor *)textColor
+                     textFont:(UIFont *)textFont borderColor:(UIColor *)borderColor
+                 borderRadius:(CGFloat)radious;
+
+
 @end

@@ -20,10 +20,7 @@ typedef void(^completionHeight)(CGFloat height);
 
 + (instancetype)tagAlignViewWithContents:(NSArray *)array
                               itemMarign:(CGFloat)marign
-                        itemCornerRadius:(CGFloat)radius
-                                itemFont:(UIFont *)itemFont
-                           itemTextColor:(UIColor *)itemColor
-                         itemBorderColor:(UIColor *)borderColor;
+                              configDict:(NSDictionary *)configDic;
 /** 对齐方式 */
 @property (nonatomic,assign) PSTagAlignStyle alignStyle;
 

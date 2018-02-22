@@ -20,7 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    PSTagAlignView *tagAlignView = [PSTagAlignView tagAlignViewWithContents:@[@"金城郡", @"安定郡", @"北地郡",@"陈国", @"武威郡", @"张掖郡", @"梁国", @"酒泉郡", @"敦煌郡", @"张掖属国",@"中山国", @"沛国", @"居延属国",@"陇西郡",@"汉阳郡", @"鲁国",@"武都郡"] itemMarign:5.0 itemCornerRadius:5.0 itemFont:[UIFont systemFontOfSize:14] itemTextColor:[UIColor orangeColor] itemBorderColor:[UIColor orangeColor]];
+    NSArray *dataArray = @[@"金城郡", @"安定郡", @"北地郡",@"陈国", @"武威郡", @"张掖郡", @"梁国", @"酒泉郡", @"敦煌郡", @"张掖属国",@"中山国", @"沛国", @"居延属国",@"陇西郡",@"汉阳郡", @"鲁国",@"武都郡"];
+    NSDictionary *configDic = @{@"textFont": [UIFont systemFontOfSize:14],
+                                @"textColor": [UIColor orangeColor],
+                                @"borderColor": [UIColor orangeColor],
+                                @"borderRadius": [NSNumber numberWithFloat:10.f]
+                                };
+    PSTagAlignView *tagAlignView = [PSTagAlignView tagAlignViewWithContents:dataArray itemMarign:5.0 configDict:configDic];
     [self.view addSubview:tagAlignView];
     
     self.tagAlignView =tagAlignView;

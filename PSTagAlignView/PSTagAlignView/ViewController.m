@@ -6,8 +6,12 @@
 //  Copyright © 2018年 pengshuai. All rights reserved.
 //
 
+#define KMAXHeight [UIScreen mainScreen].bounds.size.height
+#define KMAXWidth  [UIScreen mainScreen].bounds.size.width
+
 #import "ViewController.h"
 #import "PSTagAlignView.h"
+
 
 @interface ViewController ()
 @property (nonatomic,strong) PSTagAlignView *tagAlignView;
@@ -27,6 +31,7 @@
                                 @"borderRadius": [NSNumber numberWithFloat:10.f]
                                 };
     PSTagAlignView *tagAlignView = [PSTagAlignView tagAlignViewWithContents:dataArray itemMarign:5.0 configDict:configDic];
+    
     [self.view addSubview:tagAlignView];
     
     self.tagAlignView =tagAlignView;
@@ -40,6 +45,7 @@
     NSLayoutConstraint *centerXConstarint = [NSLayoutConstraint constraintWithItem:tagAlignView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:tagAlignView.superview attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0];
 
     NSLayoutConstraint *centerYConstarint = [NSLayoutConstraint constraintWithItem:tagAlignView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:tagAlignView.superview attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0];
+    
     [NSLayoutConstraint activateConstraints:@[widthConstarint, heightConstarint, centerXConstarint, centerYConstarint]];
 
     __weak typeof(self) weakSelf = self;
@@ -50,6 +56,7 @@
     [tagAlignView reloadData];
 
 }
+
 - (IBAction)switchChange:(UISwitch *)sender {
     if (sender.isOn) {
         //右对齐
@@ -63,8 +70,7 @@
 }
 - (IBAction)increaseWidth:(UIButton *)sender {
     CGFloat originalWidth = self.widthConstarint.constant;
-    CGFloat maxWidth = [UIScreen mainScreen].bounds.size.width;
-    self.widthConstarint.constant = MIN(maxWidth, originalWidth + 50);
+    self.widthConstarint.constant = MIN(KMAXWidth, originalWidth + 50);
     __weak typeof(self) weakSelf = self;
     self.tagAlignView.completionBlock = ^(CGFloat height) {
         weakSelf.heightConstarint.constant = height;
@@ -74,8 +80,7 @@
 }
 - (IBAction)descreaseWidth:(UIButton *)sender {
     CGFloat originalWidth = self.widthConstarint.constant;
-    CGFloat maxHeight = [UIScreen mainScreen].bounds.size.height;
-    self.widthConstarint.constant = MIN(maxHeight, originalWidth - 50);
+    self.widthConstarint.constant = MAX(0, originalWidth - 50);
     __weak typeof(self) weakSelf = self;
     self.tagAlignView.completionBlock = ^(CGFloat height) {
         weakSelf.heightConstarint.constant = height;

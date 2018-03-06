@@ -77,7 +77,6 @@
         weakSelf.heightConstarint.constant = height;
     };
     [self.tagAlignView reloadData];
-
 }
 - (IBAction)descreaseWidth:(UIButton *)sender {
     CGFloat originalWidth = self.widthConstarint.constant;

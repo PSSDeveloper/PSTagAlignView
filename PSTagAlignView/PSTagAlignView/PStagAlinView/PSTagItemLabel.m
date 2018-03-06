@@ -62,6 +62,8 @@ static const CGFloat PSTagItemPading = 5.f;
         _itemLabel = [[UILabel alloc] init];
         _itemLabel.textAlignment =NSTextAlignmentCenter;
         _itemLabel.translatesAutoresizingMaskIntoConstraints = NO;
+        _itemLabel.layer.masksToBounds = YES;
+        _itemLabel.backgroundColor = _itemLabel.superview.superview.backgroundColor;
     }
     return _itemLabel;
 }

@@ -72,7 +72,7 @@
         for (NSString *str in self.contentArray) {
             PSTagItemLabel *itemLabel = [[PSTagItemLabel alloc] initWithFrame:CGRectZero WithtextColor:self.itemTextColor textFont:self.characterFont borderColor:self.borderColor borderRadius:self.radius];
             itemLabel.contentString = str;
-            CGFloat itemWidth = [itemLabel widthOfStr:str] + self.marign;
+            CGFloat itemWidth = [itemLabel widthOfStr:str] + 2 * self.marign;
             NSAssert(itemWidth <= maxWidth, @"Error:The content string beyond the maxwidth");
             if (itemWidth <= maxWidth) {
                 [self addSubview:itemLabel];

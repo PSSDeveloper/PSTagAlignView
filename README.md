@@ -4,6 +4,10 @@
 
 #使用方式
 
+```ruby
+//现已支持cocoaPods引入
+pod 'PSTagAlignView', '~> 1.0'
+```
 
 
 

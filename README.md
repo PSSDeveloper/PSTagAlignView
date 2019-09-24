@@ -1,4 +1,7 @@
 # PSTagAlignView
+![](https://img.shields.io/badge/language-Objective--C-green.svg)   ![](https://img.shields.io/cocoapods/v/PSTagAlignView.svg?style=flat)   ![](https://img.shields.io/cocoapods/l/PSTagAlignView.svg?style=flat)
+
+
 * 一个自定义标签显示视图，可选择左对齐或者右对齐。
 * 该自定视图会根据填充的数据以及视图的宽度自动给出完成布局之后的整体高度。
 
